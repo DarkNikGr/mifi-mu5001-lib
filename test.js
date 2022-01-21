@@ -1,6 +1,5 @@
-const {Session} = require('./src/session');
-const {Forms} = require('./src/forms');
-const axios = require('axios');
+const Session = require('./src/session');
+const Forms = require('./src/forms');
 
 async function test () {
     const session = new Session("10.0.10.1");

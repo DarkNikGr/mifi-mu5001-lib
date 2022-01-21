@@ -1,5 +1,6 @@
 const { ipcMain, Notification } = require('electron')
 const Storage = require('./storage');
+const Session = require('../lib/session');
 
 class Actions {
     constructor() {
