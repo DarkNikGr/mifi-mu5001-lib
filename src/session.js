@@ -5,9 +5,9 @@ const md5 = require('./md5');
 const { paswordAlgorithmsCookie } = require('./util');
 
 class Session {
-    constructor() {
+    constructor(modemIp) {
         this._stok = '';
-        this._modem_ip = "10.0.10.1";
+        this._modem_ip = modemIp;
         this._url_prefix = "http://";
         this._referer = "/index.html";
         this._url_set = "/goform/goform_set_cmd_process";
