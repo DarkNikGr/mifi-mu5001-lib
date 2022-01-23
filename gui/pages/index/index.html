@@ -6,6 +6,31 @@
 </head>
 <body>
     <button onclick="connectToModem()">Connect to Modem</button>
+    <div>
+        <h3>LTP</h3>
+        <div>
+            <strong>RSRP: </strong>
+            <span id="val_lte_rsrp"></span>
+            <span> dBm</span>
+        </div>
+        <div>
+            <strong>SINR: </strong>
+            <span id="val_lte_sinr"></span>
+            <span> db</span>
+        </div>
+
+        <h3>5G</h3>
+        <div>
+            <strong>RSRP: </strong>
+            <span id="val_5g_rsrp"></span>
+            <span> dBm</span>
+        </div>
+        <div>
+            <strong>SINR: </strong>
+            <span id="val_5g_sinr"></span>
+            <span> db</span>
+        </div>
+    </div>
     <script src="./index.js"></script>
 </body>
 </html>
