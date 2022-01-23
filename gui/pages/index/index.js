@@ -9,3 +9,7 @@ window.setInterval(function(){
 ipcRenderer.on('getIndexInfoData', (event, info) => {
     console.log(info);
 })
+
+function connectToModem() {
+    ipcRenderer.send('connectToModem');
+}

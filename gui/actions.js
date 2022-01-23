@@ -13,6 +13,7 @@ class Actions {
         this.window = window;
         ipcMain.on('connectToModem', this.connectToModem.bind(this));
         ipcMain.on('modemConfigSaveSettings', this.modemConfigSaveSettings.bind(this));
+        ipcMain.on('modemConfigGetSettings', this.modemConfigGetSettings.bind(this));
 
         ipcMain.on('getIndexInfo', this.getIndexInfo.bind(this));
     }
@@ -36,8 +37,17 @@ class Actions {
         }
     }
 
+    modemConfigGetSettings(event) {
+        this.window.send('modemConfigGetSettingsData', this.storage.getData('modem-config'));
+    }
+
     modemConfigSaveSettings(event, config) {
-        
+        if (config?.modemIp && config?.modemPassword) {
+            this.storage.setData('modem-config', config);
+            new Notification({ title: 'Modem Config', body: 'Save successful' }).show()
+        } else {
+            new Notification({ title: 'Modem Config', body: 'Save failed' }).show()
+        }
     }
 }
 

@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+<head>
     <title>Config</title>
-  </head>
-  <body>
-    <h1>Config</h1>
-  </body>
+    <script src="./../jquery.js"></script>
+</head>
+<body>
+<div id="config-modem">
+    <h1>Config Modem</h1>
+    <div>
+        <label for="modemIp">Modem Ip</label>
+        <input type="text" id="modemIp">
+    </div>
+    <div>
+        <label for="modemPassword">Modem Password</label>
+        <input type="text" id="modemPassword">
+    </div>
+    <button onclick="saveSettings()">Save</button>
+</div>
+<script src="./config-modem.js"></script>
+</body>
 </html>
