@@ -16,15 +16,21 @@ class Window extends BrowserWindow {
     constructor({file, ...windowSettings}) {
         super({ ...defaultProps, ...windowSettings});
 
+        this.homeFile = file;
+
         this.loadFile(file)
 
         Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 
-        this.webContents.openDevTools();
+        // this.webContents.openDevTools();
 
         this.once('ready-to-show', () => {
             this.show();
         });
+    }
+
+    goToHome() {
+        this.loadFile(this.homeFile);
     }
 }
 

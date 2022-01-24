@@ -4,20 +4,12 @@ module.exports = [{
         browserWindow.loadFile('./gui/pages/index/index.html')
     }
 },{
-    label: 'Network Settings',
-    submenu: [{
-        label: 'Mode',
-    },{
-        label: 'Network',
-    }]
-},{
     label: 'Cell Settings',
     submenu: [{
-        label: 'Cell Lock',
-    },{
         label: '5G Bands Lock',
-    },{
-        label: '4G Bands Lock',
+        click(menuItem, browserWindow, event) {
+            browserWindow.loadFile('./gui/pages/cellSettings-5gband/cellSettings-5gband.html')
+        }
     }]
 },{
     label: 'Config',
