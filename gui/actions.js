@@ -64,7 +64,6 @@ class Actions {
         if (this.session && this.forms) {
             const setBands = await this.forms.nr5g_band(bands);
             if (setBands?.result === 'success') {
-                this.forms = new Forms(this.session);
                 new Notification({ title: 'Set 5G Bands', body: 'Success' }).show()
                 this.window.goToHome();
             } else {
