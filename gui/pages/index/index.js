@@ -23,7 +23,7 @@ ipcRenderer.on('getIndexInfoData', (event, info) => {
         let ca = x.split(',');
         return `<div>(B${ca[3]})${ca[4]}@${ca[5]}MHZ</div>`
     }).join('') || '');
-    $('#val_nr5g_pci').html(info.nr5g_pci);
+    $('#val_nr5g_pci').html(parseInt(info.nr5g_pci, 16));
     $('#val_nr5g_action_band').html(info.nr5g_action_band);
     $('#val_nr5g_action_channel').html(info.nr5g_action_channel);
 
