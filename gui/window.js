@@ -22,7 +22,7 @@ class Window extends BrowserWindow {
 
         Menu.setApplicationMenu(Menu.buildFromTemplate(menu));
 
-        // this.webContents.openDevTools();
+        this.webContents.openDevTools();
 
         this.once('ready-to-show', () => {
             this.show();

@@ -2,33 +2,71 @@
 <html>
 <head>
     <title>Info</title>
+    <link rel="stylesheet" href="../base.css">
     <script src="./../jquery.js"></script>
+    <script src="./../utilities.js"></script>
 </head>
 <body>
     <button onclick="connectToModem()">Connect to Modem</button>
-    <div>
-        <h3>LTP</h3>
+    <div class="datatable">
+        <h3>Connection:</h3>
         <div>
+            <strong>Type:</strong>
+            <span id="val_network_type"></span>
+        </div>
+        <div>
+            <strong>Cell id:</strong>
+            <span id="val_cell_id"></span>
+        </div>
+        <div>
+            <strong>Enbid:</strong>
+            <span id="val_enbid"></span>
+        </div>
+        <br>
+        <h3>4G</h3>
+        <div>
+            <strong>PCI:</strong>
+            <span id="val_pci"></span>
+        </div>
+        <div>
+            <strong>Active Band:</strong>
+            <span id="val_wan_active_band"></span>
+             -
+            (B<span id="val_lte_ca_pcell_band"></span>)<span id="val_wan_active_channel"></span>@<span id="val_lte_ca_pcell_bandwidth"></span>MHZ
+        </div>
+        <div class="dflex">
+            <strong>CA:</strong>
+            <div id="val_ca_table"></div>
+        </div>
+        <div class="line">
             <strong>RSRP: </strong>
-            <span id="val_lte_rsrp"></span>
-            <span> dBm</span>
+            <div class="meter" id="val_lte_rsrp"></div>
         </div>
-        <div>
+        <div class="line">
+            <strong>RSRQ: </strong>
+            <div class="meter" id="val_lte_rsrq"></div>
+        </div>
+        <div class="line">
             <strong>SINR: </strong>
-            <span id="val_lte_sinr"></span>
-            <span> db</span>
+            <div class="meter" id="val_lte_sinr"></div>
         </div>
-
+        <br>
         <h3>5G</h3>
         <div>
-            <strong>RSRP: </strong>
-            <span id="val_5g_rsrp"></span>
-            <span> dBm</span>
+            <strong>PCI:</strong>
+            <span id="val_nr5g_pci"></span>
         </div>
         <div>
+            <strong>Active Band:</strong>
+            <span id="val_nr5g_action_band"></span>(<span id="val_nr5g_action_channel"></span>)
+        </div>
+        <div class="line">
+            <strong>RSRP: </strong>
+            <div class="meter" id="val_5g_rsrp"></div>
+        </div>
+        <div class="line">
             <strong>SINR: </strong>
-            <span id="val_5g_sinr"></span>
-            <span> db</span>
+            <div class="meter" id="val_5g_sinr"></div>
         </div>
     </div>
     <script src="./index.js"></script>

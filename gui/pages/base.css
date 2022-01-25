@@ -1,0 +1,35 @@
+.meter {
+    text-align: center;
+    padding: 2px;
+    border: 1px solid #000;
+}
+
+.dflex {
+    display: flex;
+    align-items: center;
+}
+
+.dgrid{
+    display: grid;
+}
+
+.gridcol3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.datatable {
+    display: grid;
+}
+
+.datatable > * {
+    margin: 2px 0;
+}
+
+.datatable .line {
+    display: flex;
+    align-items: center;
+}
+
+.datatable .line .meter {
+    flex: 1;
+}
