@@ -33,6 +33,9 @@ ipcRenderer.on('getIndexInfoData', (event, info) => {
     $('#val_lte_rsrq').html(info.lte_rsrq + ' db');
     $("#val_lte_rsrq").css('background', calccolor(info.lte_rsrq, -30, -20, -15, -10, -6, 0));
 
+    $('#val_lte_rssi').html(info.lte_rssi + ' dBm');
+    $("#val_lte_rssi").css('background', calccolor(info.lte_rssi, -90, -80, -70, -67, -30, 0));
+
     $('#val_lte_sinr').html(info.lte_snr + ' db');
     $('#val_lte_sinr').css('background', calccolor(info.lte_snr, -15, 3, 10, 15, 22, 30));
 
