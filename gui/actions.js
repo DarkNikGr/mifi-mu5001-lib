@@ -21,6 +21,7 @@ class Actions {
         ipcMain.on('getIndexInfo', this.getIndexInfo.bind(this));
 
         ipcMain.on('set5GBands', this.set5GBands.bind(this));
+        ipcMain.on('set4GBands', this.set4GBands.bind(this));
     }
 
     async getIndexInfo(event) {
@@ -109,6 +110,20 @@ class Actions {
                 this.window.goToHome();
             } else {
                 new Notification({ title: 'Set 5G Bands', body: 'Failure' }).show()
+            }
+        } else {
+            new Notification({ title: 'Modem Connection', body: 'Connect to modem first' }).show()
+        }
+    }
+
+    async set4GBands(event, bands) {
+        if (this.session && this.forms) {
+            const setBands = await this.forms.lte_band(bands);
+            if (setBands?.result === 'success') {
+                new Notification({ title: 'Set LTE Bands', body: 'Success' }).show()
+                this.window.goToHome();
+            } else {
+                new Notification({ title: 'Set LTE Bands', body: 'Failure' }).show()
             }
         } else {
             new Notification({ title: 'Modem Connection', body: 'Connect to modem first' }).show()
