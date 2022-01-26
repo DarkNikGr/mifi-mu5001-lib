@@ -24,4 +24,9 @@ module.exports = [{
             browserWindow.loadFile('./gui/pages/config-modem/config-modem.html')
         }
     }]
+},{
+    label: 'Debug',
+    click(menuItem, browserWindow, event) {
+        browserWindow.loadFile('./gui/pages/debug/debug.html')
+    }
 }];
