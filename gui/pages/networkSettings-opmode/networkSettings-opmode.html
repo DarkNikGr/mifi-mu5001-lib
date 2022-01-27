@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Config</title>
+    <link rel="stylesheet" href="../base.css">
+    <script src="./../jquery.js"></script>
+</head>
+<body>
+<div id="config-modem">
+    <h1>NetWrk Mode</h1>
+    <div>
+        <label>Mode</label>
+        <select id="mode">
+            <option value="LTE_BRIDGE">Bridge Mode</option>
+            <option value="PPPOE">Cable Broadband Mode</option>
+            <option value="PPP">Wireless Broadband Mode</option>
+            <option value="AUTO">Automatic</option>
+        </select>
+    </div>
+    <button onclick="saveSettings()">Save</button>
+</div>
+<script src="./networkSettings-opmode.js"></script>
+</body>
+</html>

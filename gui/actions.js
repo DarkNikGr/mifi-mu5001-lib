@@ -20,8 +20,11 @@ class Actions {
 
         ipcMain.on('getIndexInfo', this.getIndexInfo.bind(this));
 
+        ipcMain.on('setNetworkMode', this.setNetworkMode.bind(this));
+
         ipcMain.on('set5GBands', this.set5GBands.bind(this));
         ipcMain.on('set4GBands', this.set4GBands.bind(this));
+        ipcMain.on('set4GCell', this.set4GCell.bind(this));
     }
 
     async getIndexInfo(event) {
@@ -89,6 +92,34 @@ class Actions {
                 this.window.goToHome();
             } else {
                 new Notification({ title: 'Set LTE Bands', body: 'Failure' }).show()
+            }
+        } else {
+            new Notification({ title: 'Modem Connection', body: 'Connect to modem first' }).show()
+        }
+    }
+
+    async set4GCell(event, cell) {
+        if (this.session && this.forms) {
+            const setCell = await this.forms.cell_lock(cell.pci, cell.earfcn);
+            if (setCell?.result === 'success') {
+                new Notification({ title: 'Set LTE Cell', body: 'Success' }).show()
+                this.window.goToHome();
+            } else {
+                new Notification({ title: 'Set LTE Cell', body: 'Failure' }).show()
+            }
+        } else {
+            new Notification({ title: 'Modem Connection', body: 'Connect to modem first' }).show()
+        }
+    }
+
+    async setNetworkMode(event, mode) {
+        if (this.session && this.forms) {
+            const changeMode = await this.forms.change_mode(mode);
+            if (changeMode?.result === 'success') {
+                new Notification({ title: 'Set Network Mode', body: 'Success' }).show()
+                this.window.goToHome();
+            } else {
+                new Notification({ title: 'Set Network Mode', body: 'Failure' }).show()
             }
         } else {
             new Notification({ title: 'Modem Connection', body: 'Connect to modem first' }).show()
